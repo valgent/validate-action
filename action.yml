@@ -1,0 +1,48 @@
+name: 'Validate Agent Card'
+description: 'Validate AI agent cards against the A2A specification using Valgent'
+author: 'Valgent'
+branding:
+  icon: 'check-circle'
+  color: 'green'
+
+inputs:
+  agent-card-path:
+    description: 'Path to the agent card JSON file'
+    required: true
+  api-key:
+    description: 'Valgent API key (optional, uses free tier without key)'
+    required: false
+  fail-on-warnings:
+    description: 'Fail the action if validation has warnings'
+    required: false
+    default: 'false'
+  include-score:
+    description: 'Include quality score in output'
+    required: false
+    default: 'true'
+  include-suggestions:
+    description: 'Include improvement suggestions'
+    required: false
+    default: 'true'
+  api-url:
+    description: 'Valgent API URL (for testing/self-hosted)'
+    required: false
+    default: 'https://api.valgent.io'
+
+outputs:
+  valid:
+    description: 'Whether the agent card is valid (true/false)'
+  score:
+    description: 'Quality score (0-100, if enabled)'
+  errors:
+    description: 'JSON array of validation errors'
+  warnings:
+    description: 'JSON array of validation warnings'
+  suggestions:
+    description: 'JSON array of improvement suggestions'
+  summary:
+    description: 'Human-readable validation summary'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

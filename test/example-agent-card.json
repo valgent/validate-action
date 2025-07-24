@@ -1,0 +1,25 @@
+{
+  "name": "Test Agent",
+  "description": "A test AI agent for validation",
+  "version": "1.0.0",
+  "url": "https://api.testagent.com/agent",
+  "protocolVersion": "0.2.6",
+  "skills": [
+    {
+      "id": "test-skill",
+      "name": "Test Skill",
+      "description": "A skill for testing purposes",
+      "tags": ["test", "example"]
+    }
+  ],
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": false
+  },
+  "defaultInputModes": ["text"],
+  "defaultOutputModes": ["text"],
+  "provider": {
+    "organization": "Test Organization",
+    "url": "https://testagent.com"
+  }
+}
