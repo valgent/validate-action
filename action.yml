@@ -24,10 +24,6 @@ inputs:
     description: 'Include improvement suggestions'
     required: false
     default: 'true'
-  api-url:
-    description: 'Valgent API URL (for testing/self-hosted)'
-    required: false
-    default: 'https://api.valgent.io'
 
 outputs:
   valid:

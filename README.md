@@ -98,7 +98,6 @@ jobs:
 | `fail-on-warnings` | Fail the action if validation has warnings | ❌ | `false` |
 | `include-score` | Include quality score in output | ❌ | `true` |
 | `include-suggestions` | Include improvement suggestions | ❌ | `true` |
-| `api-url` | Valgent API URL (for testing/self-hosted) | ❌ | `https://api.valgent.io` |
 
 ## 📤 Outputs
 
@@ -277,9 +276,9 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## 🔗 Links
 
 - [Valgent Website](https://valgent.io)
-- [API Documentation](https://github.com/valgent/validator-api)
-- [CLI Tool](https://github.com/valgent/cli)
-- [A2A Specification](https://a2a.dev)
+- [API Documentation](https://www.valgent.io/docs/api/authentication)
+- [CLI Tool](https://www.npmjs.com/package/@valgent/cli)
+- [A2A Specification](https://a2aprotocol.ai)
 
 ---
 

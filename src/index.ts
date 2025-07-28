@@ -13,7 +13,6 @@ interface ValidationResponse {
 async function validateAgentCard(
   agentCard: unknown,
   apiKey?: string,
-  apiUrl: string = 'https://api.valgent.io',
   includeScore: boolean = true,
   includeSuggestions: boolean = true
 ): Promise<ValidationResponse> {
@@ -35,7 +34,7 @@ async function validateAgentCard(
   };
 
   try {
-    const response = await fetch(`${apiUrl}/v1/validate`, {
+    const response = await fetch('https://api.valgent.io/v1/validate', {
       method: 'POST',
       headers,
       body: JSON.stringify(requestBody),
@@ -96,7 +95,6 @@ async function run(): Promise<void> {
     const failOnWarnings = core.getBooleanInput('fail-on-warnings');
     const includeScore = core.getBooleanInput('include-score');
     const includeSuggestions = core.getBooleanInput('include-suggestions');
-    const apiUrl = core.getInput('api-url') || 'https://api.valgent.io';
 
     core.info(`Validating agent card: ${agentCardPath}`);
 
@@ -120,7 +118,6 @@ async function run(): Promise<void> {
     const result = await validateAgentCard(
       agentCard,
       apiKey,
-      apiUrl,
       includeScore,
       includeSuggestions
     );
