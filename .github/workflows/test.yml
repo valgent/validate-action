@@ -34,7 +34,9 @@ jobs:
           include-suggestions: true
       
       - name: Test action with API key (if available)
-        if: ${{ secrets.VALGENT_API_KEY }}
+        env:
+          VALGENT_API_KEY: ${{ secrets.VALGENT_API_KEY }}
+        if: ${{ env.VALGENT_API_KEY != '' }}
         uses: ./
         with:
           agent-card-path: './test/example-agent-card.json'
