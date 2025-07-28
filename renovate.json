@@ -1,0 +1,40 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommitTypeAll(chore)",
+    ":automergeMinor",
+    ":automergePatch"
+  ],
+  "schedule": ["before 6am on monday"],
+  "timezone": "UTC",
+  "packageRules": [
+    {
+      "matchCategories": ["github-actions"],
+      "addLabels": ["dependencies", "github-actions"],
+      "semanticCommitType": "ci"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "addLabels": ["dependencies", "dev"],
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "addLabels": ["dependencies", "production"],
+      "automerge": false
+    },
+    {
+      "matchPackageNames": ["typescript", "@types/node"],
+      "groupName": "TypeScript"
+    },
+    {
+      "matchPackageNames": ["eslint", "@typescript-eslint/eslint-plugin", "@typescript-eslint/parser"],
+      "groupName": "ESLint"
+    }
+  ],
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 3,
+  "commitMessagePrefix": "chore(deps): ",
+  "labels": ["dependencies"]
+}
