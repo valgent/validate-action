@@ -2,15 +2,6 @@
 
 GitHub Action to validate AI agent cards against the A2A specification using [Valgent](https://valgent.io).
 
-## ✅ Features
-
-- **Fast Validation** - Validate agent cards in seconds
-- **A2A Compliance** - Full A2A v0.2.6 specification validation
-- **Quality Scoring** - Get 0-100 quality scores for your agent cards
-- **Smart Suggestions** - Receive actionable improvement recommendations
-- **Flexible Usage** - Works with or without API keys
-- **Rich Output** - Detailed validation results as action outputs
-
 ## 🚀 Quick Start
 
 ### Basic Usage (Free Tier)
@@ -121,12 +112,7 @@ jobs:
 1. Sign up at [valgent.io](https://valgent.io)
 2. Go to Dashboard → API Keys
 3. Generate a new API key
-4. Add it as a repository secret: `VALGENT_API_KEY`
-
-**Benefits:**
-- **Unlimited validations** (Pro/Team plans)
-- **Validation history** tracking
-- **Priority support**
+4. Add it as a repository secret and use it in the action
 
 ## 🎯 Use Cases
 
